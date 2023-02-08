@@ -1,0 +1,31 @@
+
+:root {
+    /* color */
+    --text-color:  rgb(247, 247, 238);
+    --text-color2:  rgb(71, 8, 3);
+    --header-color: #b2b2b2;
+    --background-color: rgb(75, 74, 74);
+    --nav-color :#666666;
+    --accent-color: #c70752;
+    /* size */
+
+    --padding1: 13px 0px;
+  /* font size */
+    --font-size1: 11px;
+    --font-size2: 18px;
+}
+.submenu {
+    background-color: aquamarine;
+    width: 100%;
+    height: 340px;
+
+}
+
+.v-line{
+
+    border-left: thick solid #000 ;
+
+    height:100%;
+    left: 50%;
+    position: absolute;
+   }

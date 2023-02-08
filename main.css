@@ -1,126 +1,149 @@
 :root {
-  --text-color:  beige;
-  --text-color2:  rgb(71, 8, 3);
-  --background-color: rgb(2, 2, 2);
-  --nav-color :rgb(41, 41, 41);
-  --accent-color: rgba(221, 145, 45, 0.795);
+    /* color */
+    --text-color:  rgb(247, 247, 238);
+    --text-color2:  rgb(71, 8, 3);
+    --header-color: #b2b2b2;
+    --background-color: rgb(75, 74, 74);
+    --nav-color :#666666;
+    --accent-color: #c70752;
+    /* size */
+
+    --padding1: 13px 0px;
+  /* font size */
+    --font-size1: 11px;
+    --font-size2: 18px;
 }
-body {
- margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw; 
-  background-color: var(--background-color); */
-  display: inline-block;
-  justify-content: center;
-  
-
-  
+* {
+    padding: 0;
+    margin: 0;
+    
+    /* box-sizing: border-box; */
 
 }
-
 a {
-  color: var(--text-color);
-  text-decoration: none;
+    color: var(--text-color);
+    text-decoration: none;
+}
+li{
+    padding: 10px;
+    list-style: none;
 }
 
-li {
-  padding: 10px 10px;
+body {
+    height: 100vh;
+    width: 100vw; 
+
+    
 }
 
-.con {
-  background-color: var(--nav-color);
-  
-  width: 500px;
-  height: 500px;
+header {
 
-  margin: 0 auto;
-
+    height: 33px;
+    background-color: var(--header-color);    
 }
-.navi {
-  /* display: grid;
-  grid-template-columns: repeat(3,100px)
-  grid-template-rows: ; */
-  /* background-color: var(--nav-color); */
-  align-items: center;
-  display: flex;
-  justify-content: space-between; 
-  padding: 0px 30px;
 
-  
-  
+nav {
+    /* background-color: var(--nav-color); */
+    position: sticky;
+    top:0;
+}
+.bgColor {
+    height: 70px;
+    background-color: var(--nav-color);
+}
 
+.container {
+    /* align-items: center; */
+    width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    /* padding: var(--padding1); */
 }
 
 .logo {
-  align-items: center;
+    padding: var(--padding1);
 }
-
 
 .naviMenu {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  padding-top: 0;
-
-
-  font-size: 18px;
+    display: flex;
+    font-size: var(--font-size2);
 }
-
+.naviMenu li {
+    padding: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
 .naviMenu li:hover {
-  background-color: var(--accent-color);
-  border-radius: 4px;
-  /* line-height:; */
-  color: var(--text-color);
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    color: var(--text-color);
 } 
 
-
-  .naviM2 {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  font-size: 11px;
-  
+.naviM2 {
+    display: flex;
+    font-size: var(--font-size1);
 }
-
 .toogleBtn {
-  width: 5px;
-  height: 5px;
+    display: none;
+    position: absolute;
+    right: 15px;
+    padding: 5px;
+}
+
+.submenu {
+    display:block;
+    background-color: aquamarine;
+    width: 100%;
+    height: 340px;
 
 }
 
-
+@media screen and (max-width:1183px){
+    .container {
+      /* background-color: var(--nav-color); */
+    width: auto;
+    margin: 0 auto;
+    
+    }
+}
 
 @media screen and (max-width:760px){
-  .navi{
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 30px;
 
+    .container {
+        background-color: var(--nav-color);
+        width: auto;
+        flex-direction: column;
+        /* padding: var(--padding1); */
+        
+    }
 
-  }
-  .naviMenu{
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
+    .naviMenu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        display: none;
+    }
+    .naviMenu li {
+        text-align: center;
+        width: 100%;
+        padding: 8px;
 
-  .naviMenu li{
-    width: 100%;
-    text-align: center;
-  }
-  .naviM2 {
-    flex-direction:row;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    
-  }
-
+   
+    }
+    .naviM2 {
+        flex-direction: row;
+        justify-content: end;
+        display: none;
+    }
+    .toogleBtn {
+        display: block;
 }
-  
-.toogleBtn {
-  position: absolute;
-  right: 40px;
-
+.naviMenu.active,
+.naviM2.active {
+        display: flex;
+}
+.submenu {
+    display: none;
+}
 }
